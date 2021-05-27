@@ -1,0 +1,206 @@
+{% extends 'site-templates/layout.html' %}
+
+{% block style %}
+    <style>
+        section#intro {
+            padding-bottom: 0px;
+        }
+        
+        .intro_styledContent {
+            position: relative;
+            /* height: 100%; */
+            min-height: calc(100vh - 50px);
+        }
+        .intro_styledContent::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            bottom: 0;
+            left: 6%;
+            width: 2px;
+            height: 100%;
+            background-color: var(--light-grey);
+        }
+        .intro_styledContent .intro_styledText {
+            position: absolute;
+            top: 40%;
+            left: 15%;
+            transform: translate(-10%, -40%);
+        }
+        .intro_styledContent .intro_styledSocialLinks {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: calc(6% - 2px);
+            padding: 10px 0px;
+            text-align: center;
+        }
+        
+        .intro_styledContent .intro_styledText h1 {
+            line-height: 1;
+            font-weight: bold;
+            font-size: 60px;
+        }
+        .intro_styledContent .intro_styledText p {
+            width: 400px;
+            margin-bottom: 20px;
+        }
+        .intro_styledContent .intro_styledSocialLinks ul {
+            list-style: none;
+            padding: 20px 0px;
+        }
+        .intro_styledContent .intro_styledSocialLinks ul li {
+            margin-bottom: 10px;
+        }
+        .intro_styledContent .intro_styledSocialLinks ul a i {
+            color: var(--dark-grey);
+            transition: var(--transition);
+            font-size: 20px;
+        }
+        .intro_styledContent .intro_styledSocialLinks ul a:hover i {
+            color: #000;
+        }
+        .img_container {
+            position: relative;
+            height: auto;
+            height: 600px;
+            overflow: hidden;            
+        }
+        .img_container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            display: block;
+            height: 100%;
+            transition: transform 1s ease;
+        }
+        .img_container:hover img {
+            transform: scale(1.5);
+        }
+        .img_containerLink {
+            text-align: center;
+        }
+        @media (max-width: 768px){
+            .intro_styledContent::before {
+                display: none;
+            }
+            .intro_styledSocialLinks {
+                display: none;
+            }
+        }
+        @media (max-width: 480px) {
+            .intro_styledContent {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .intro_styledContent .intro_styledText {
+                position: relative;
+                top: 0px;
+                left: 0px;
+                transform: translate(0px, 0px);
+                flex-wrap: wrap;
+                padding: 0px 10px;
+            }
+            .intro_styledContent .intro_styledText h1 {
+                font-size: 40px;
+            }
+            .intro_styledContent .intro_styledText p {
+                max-width: 300px;
+                width: auto;
+            }
+            .img_container {
+                height: 400px;
+            }
+        }
+    </style>
+{% endblock style %}
+{% block body %}
+    <section id="intro">
+        <div class="intro_styledContent">
+            <div class="intro_styledText">
+                <h1>Summer <br>Collection</h1>
+                <p>Introducing the most comfortable and popular brand ogbeni apparels collection</p>
+                <button class="btn btn-outline">
+                    Shop Now
+                </button>
+            </div>
+            <div class="intro_styledSocialLinks">
+                <ul>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-google"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section>
+        <div class="container">
+            <div class="latest_styledSection">
+                <h2 class="container_styledHeading">
+                    <span>LATEST PRODUCT</span></h2>
+                <div class="row" id="latest_product">
+                    <div class="col-lg-4 col-6">
+                        <a href="">
+                            <div class="card">
+                                <img src="{{ url_for('static', filename='images/Champion-T-Shirt.jpg') }}" alt="" class="card-img-top">
+                                <div class="card-body">
+                                    <div class="card-title" style="text-align: center;">
+                                        <h5>Tank Top</h5>
+                                        <p>&#8358; 15,000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 col-6">
+                        Hello
+                    </div>
+
+                    <div class="col-lg-4 col-6">
+                        Hello
+                    </div>
+
+                    <div class="col-lg-4 col-6">
+                        Hello
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="collection_styledSection" style="margin-top: 30px;">
+                <div class="row" id="latest_product">
+                    <div class="col-lg-6 col-md-6">
+                        <a href="#">
+                            <div class='collection_styledSectionMen img_container'>
+                                <img src="{{ url_for('static', filename='images/DSC04964-JPG-1-683x1024.jpg') }}" alt="">
+                            </div>
+                        </a>
+                        <div class='img_containerLink'>
+                            <h3>MEN</h3>
+                            <button class="btn btn-outline">Shop Now</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#">
+                            <div class="collection_styledSectionWomen img_container">
+                                <img src="{{ url_for('static', filename='images/DSC04964-JPG-1-683x1024.jpg') }}" alt="">
+                            </div>
+                        </a>
+                        <div class='img_containerLink'>
+                            <h3>WOMEN</h3>
+                            <button class="btn btn-outline">Shop Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock body %}

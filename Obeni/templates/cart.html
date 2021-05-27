@@ -1,0 +1,150 @@
+{% extends 'site-templates/layout.html' %}
+
+
+{% block style %}
+<style>
+    .cart_styledSection {
+        padding: 50px 0px;
+    }
+    .cart_styledShopTable {
+        width: 100%;
+    }
+    .cart_styledShopTable tr:first-child {
+        border-top: 1px solid #e1e1e1;
+    }
+    .cart_styledShopTable tr {
+        border-bottom: 1px solid #e1e1e1;
+        border-right: 1px solid #e1e1e1;
+        border-left: 1px solid #e1e1e1;
+        background-color: #fafafa;
+    }
+    .cart_styledShopTable th {
+        padding-right: 19px;
+    }
+    .cart_styledShopTable td {
+        text-align: right;
+    }
+    .cart_styledShopTable tr th,
+    .cart_styledShopTable tr td  {
+        padding: 15px 21px;
+    }
+    
+    .table-centered tr {
+        text-align: center;
+        width: 100%;
+    }
+    .table-centered td {
+        /* padding: 10px 5px; */
+    }
+</style>
+{% endblock style %}
+
+{% block body %}
+<section>
+    <div class="container-fluid">
+        <div class="cart_styledSection">
+            <div class="row">
+                <div class="col-lg-6">
+                    <form action="" method="post">
+                        <h3>Shopping Cart</h3>
+                        <table class="table-responsive table-centered" cellpadding="10">
+                            <thead>
+                                <tr>
+                                    <th>Products</th>
+                                    <th>Size</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="cart_styledProductThumbnail">
+                                        <a href="#"><p><img src="" alt="">Cutaway Collar Double Cuff Fine Herrigngbone</p></a>
+                                    </td>
+                                    <td>
+                                        M
+                                    </td>
+                                    <td class='cart_styledProductQuantity'>12,000</td>
+                                    <td>
+                                        <input type="number" name="" id="" style='width: 50px; text-align: center;' min="0" max="10" value='2'>
+                                    </td>
+                                    <td>12,000</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="cart_styledProductThumbnail">
+                                        <a href="#">
+                                            <p><img src="" alt="">Cutaway Collar Double Cuff Fine Herrigngbone</p>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        M
+                                    </td>
+                                    <td class='cart_styledProductQuantity'>12,000</td>
+                                    <td>2</td>
+                                    <td>12,000</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan='3' class='cart_styledActions'>
+                                        <a href="{{ url_for('main.collection') }}" class="btn btn-outline">Continue Shopping</a>
+                                        <button class="btn btn-outline">Update Cart</button>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <div class="cart_styledTotal">
+                        <h2>Cart Total</h2>
+                        <div class="cart_styledTable">
+                            <table cellspacing='0' class='cart_styledShopTable'>
+                                <tbody>
+                                    <tr class="cart_styledSubTotal">
+                                        <th>Subtotal</th>
+                                        <td data-title="Subtotal">
+                                            <span class='cart_styledPrice'>
+                                                <span class="cart_styledCurrecyStmbol"></span>
+                                                39,000.00
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="cart_styledShippingTotal">
+                                        <th style="display: none;">Shipping</th>
+                                        <td data-title='Shipping' colspan='2' style="text-align: left;">
+                                            <p class="cart_styledShippingTitle">Shipping</p>
+                                            <ul class="cart_styledShippingMethod">
+                                                <label for="shipping_flat_rate">Flat Rate:</label>
+                                                <span id="shipping_flat_rate">
+                                                    <span class='cart_styledPrice'>
+                                                        <span class="cart_styledCurrecyStmbol"></span>
+                                                        1,500
+                                                    </span>
+                                                </span>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr class="cart_styledOrderTotal">
+                                        <th>Total</th>
+                                        <td data-title='Total'>
+                                            <strong>
+                                                <span class='cart_styledPrice'>
+                                                    <span class="cart_styledCurrecyStmbol"></span>
+                                                    39,000.00
+                                                </span>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock body %}

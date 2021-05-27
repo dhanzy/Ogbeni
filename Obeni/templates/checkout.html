@@ -1,0 +1,37 @@
+{% from 'site-templates/_macros.html' import render_field_with_errors, render_shortfield_with_errors %}
+
+{% extends 'site-templates/layout.html' %}
+
+
+
+{% block body %}
+    <section>
+        <div class="container">
+            <div class="checkout_styledSection" style="padding-top: 40px;">
+                <form action="" method="post">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div id="checkout_styledAddress">
+                                <h3>Billing Details</h3>
+                                <div class="formelement">
+                                    <div class="form-row">
+                                        {{ render_shortfield_with_errors(form.firstname) }}
+                                        {{ render_shortfield_with_errors(form.lastname) }}
+                                    </div>
+                                    {{ render_field_with_errors(form.address) }}
+                                    {{ render_field_with_errors(form.city) }}
+                                    {{ render_field_with_errors(form.phone) }}
+                                    {{ render_field_with_errors(form.email) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock body %}

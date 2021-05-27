@@ -1,0 +1,178 @@
+{% from 'site-templates/_macros.html' import render_sitem %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ogbeni Apparels</title>
+
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }} ">
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/font-awesome/css/all.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/bootstrap-4.5.3-dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+        :root {
+            --light-grey: #efefef;
+            --dark-grey: #757272;
+            --fz-xxs: 12px;
+            --fz-xs: 13px;
+            --fz-sm: 14px;
+            --fz-md: 16px;
+            --fz-lg: 18px;
+            --fz-xl: 20px;
+            --fz-heading: 32px;
+            --transition: all 0.5s cubic-bezier(0.645,0.045,0.355,1);;    
+        }
+        body {
+            min-height: 100vh;
+        }
+        a, a:hover {
+            text-decoration: none;
+            color: #000;
+        }
+        section {
+            min-height: calc(100vh - 400px);
+            border-bottom: 2px solid var(--light-grey);
+            padding: 50px 0px;
+        }
+        .btn-outline {
+            border: 1px solid #000;
+            transition: background-color .5s ease, color 1s ease;
+            color: #000;
+        }
+        .btn-outline:hover {
+            border: 1px solid #fff;
+            color: #fff;
+            background-color: #000;
+        }
+        
+        .container_styledHeading {
+            display: flex;
+            width: 100%;
+            -webkit-box-align: center;
+            align-items: center;
+            position: relative;
+            margin: 10px 0px 40px;
+            width: 100%;
+            font-size: clamp(26px,5vw,var(--fz-heading));
+            font-weight: bolder;
+        }
+        .container_styledHeading::after {
+            position: relative;
+            content: "";
+            display: block;
+            width: 100px;
+            height: 3px;
+            margin-left: 20px;
+            background-color: var(--dark-grey);   
+        }
+        .footer_styledUpper {
+            padding: 50px 0px;
+            text-align: center;
+        } 
+        .footer_styledUpper ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;   
+        }
+        .footer_styledLower {
+            color: var(--light-grey);
+            background-color: black;
+            padding: 80px 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+    </style>
+
+    {% block style %}
+
+    {% endblock style %}
+</head>
+<body>
+    <div class="wrapper">
+        <div class="focus-wrapper">
+            <div class="root">
+                <header>
+                    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">OGBENI</a>
+                      
+                        <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo03">
+                            <ul class="navbar-nav">
+                                {{ render_sitem('main.men', 'Men') }}
+                                {{ render_sitem('main.women', 'Women') }}
+                                {{ render_sitem('main.collection', 'Collection') }}
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link"><i class="fa fa-search"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url_for('main.cart') }}" class="nav-link"><i class="fa fa-shopping-cart"></i></a>
+                                </li>
+                              </ul>
+                          <!-- <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                          </form> -->
+                        </div>
+                      </nav>
+                </header>
+                <div id="content">
+                    <main>
+                        {% block body %}
+                        {% endblock body %}
+                    </main>
+                    <footer>
+                        <div class="footer_styledUpper">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <h3>Company</h3>
+                                        <ul>
+                                            <li><a href="#">Men</a></li>
+                                            <li><a href="#">Women</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <h3>Help</h3>
+                                        <ul>
+                                            <li><a href="#">Men</a></li>
+                                            <li><a href="#">Women</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <h3>Get Social</h3>
+                                        <ul>
+                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <h3>Contact</h3>
+                                        <ul>
+                                            <li><a href="#">Men</a></li>
+                                            <li><a href="#">Women</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer_styledLower">
+                            <p>Copyright 2021. All rights reserved</p>
+                            <p>Ogbeni Apparels</p>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/jquery-1.11.3.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/bootstrap-4.5.3-dist/js/bootstrap.min.js') }}"></script>
+</body>
+</html>

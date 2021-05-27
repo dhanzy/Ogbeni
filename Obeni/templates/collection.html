@@ -1,0 +1,48 @@
+{% extends 'site-templates/layout.html' %}
+
+{% block style %}
+    <style>
+        .collection_styledSection {
+            padding: 40px 0px;
+        }
+    </style>
+{% endblock style %}
+
+{% block body %}
+<section>
+    <div class="container-fluid">
+        <div class="collection_styledSection">
+            <div class="row">
+                <div class="col-lg-3">
+                    <a href="#">
+                        <div class="card">
+                            <img src="{{ url_for('static', filename='images/Champion-T-Shirt.jpg') }}" alt="" class="card-img-top">
+                            <div class="card-body">
+                                <div class="card-title" style='text-align: center;'>
+                                    <h5>Cutaway Collar Double Cuff Herringbone Shirt</h5>
+                                    <p class="collection_styledColor">Navy Blue</p>
+                                    <p class="collection_styledPrice">13,000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3">
+                    <a href="#">
+                        <div class="card">
+                            <img src="{{ url_for('static', filename='images/Champion-T-Shirt.jpg') }}" alt="" class="card-img-top">
+                            <div class="card-body">
+                                <div class="card-title" style="text-align: center;">
+                                    <h5>Tank Top</h5>
+                                    <p>OFF White</p>
+                                    <p>&#8358; 15,000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock body %}
